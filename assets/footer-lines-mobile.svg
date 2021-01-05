@@ -1,0 +1,48 @@
+<svg width="160px" height="594px" viewBox="0 0 160 594" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <rect id="path-1" x="0" y="0" width="160" height="594"></rect>
+    <linearGradient x1="5.55111512e-15%" y1="87.6651786%" x2="0%" y2="11.2377232%" id="linearGradient-3">
+      <stop stop-color="#8D8D8D" offset="0%"></stop>
+      <stop stop-color="#2C2C2C" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="0%" y1="11.2377232%" x2="0%" y2="87.6651786%" id="linearGradient-4">
+      <stop stop-color="#8D8D8D" offset="0%"></stop>
+      <stop stop-color="#2C2C2C" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="0%" y1="11.2377232%" x2="0%" y2="87.6651786%" id="linearGradient-5">
+      <stop stop-color="#8D8D8D" offset="0%"></stop>
+      <stop stop-color="#2C2C2C" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="49.9998824%" y1="81.4903846%" x2="50%" y2="3.061617e-15%" id="linearGradient-6">
+      <stop stop-color="#7A7A7A" stop-opacity="0" offset="0%"></stop>
+      <stop stop-color="#444444" offset="100%"></stop>
+    </linearGradient>
+  </defs>
+  <g id="Homepage" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="NR-Homepage---X-Small-Devices:-Mobile" transform="translate(-160.000000, -6536.000000)">
+      <g id="09-Footer" transform="translate(15.000000, 6342.000000)">
+        <g id="Dark" transform="translate(145.000000, 194.000000)">
+          <mask id="mask-2" fill="white">
+            <use xlink:href="#path-1"></use>
+          </mask>
+          <g id="Footer-Lines" mask="url(#mask-2)" stroke-linecap="round" stroke-width="5">
+            <g transform="translate(80.000000, 283.000000) scale(-1, 1) translate(-80.000000, -283.000000) translate(15.000000, -43.000000)">
+              <line x1="113.75" y1="652" x2="113.5" y2="216" id="Path" stroke="#666666" opacity="0.4" transform="translate(113.500000, 434.000000) scale(-1, 1) translate(-113.500000, -434.000000) "></line>
+              <line x1="129.75" y1="652" x2="129.5" y2="315" id="Path" stroke="#666666" opacity="0.4" transform="translate(129.500000, 483.500000) scale(-1, 1) translate(-129.500000, -483.500000) "></line>
+              <line x1="64.5" y1="652" x2="64.5" y2="63.3239824" id="Path" stroke="#666666" opacity="0.4" transform="translate(64.500000, 357.500000) scale(-1, 1) translate(-64.500000, -357.500000) "></line>
+              <line x1="47.5" y1="652" x2="47.5" y2="101.520794" id="Path-Copy-2" stroke="#666666" opacity="0.4" transform="translate(47.500000, 376.500000) scale(-1, 1) translate(-47.500000, -376.500000) "></line>
+              <line x1="97.625" y1="652" x2="97.75" y2="101.431818" id="Path" stroke="url(#linearGradient-3)" opacity="0.849121094" transform="translate(97.500000, 376.500000) scale(-1, 1) translate(-97.500000, -376.500000) "></line>
+              <line x1="97.625" y1="652" x2="97.75" y2="283.432084" id="Path-Copy-8" stroke="#66E6AB" opacity="0.849121094" transform="translate(97.500000, 467.500000) scale(-1, 1) translate(-97.500000, -467.500000) "></line>
+              <line x1="15.625" y1="652" x2="15.75" y2="342.431755" id="Path" stroke="url(#linearGradient-4)" opacity="0.217099144" transform="translate(15.500000, 497.000000) scale(-1, 1) translate(-15.500000, -497.000000) "></line>
+              <line x1="15.625" y1="652" x2="15.75" y2="444.431535" id="Path-Copy-9" stroke="#EFEFEF" opacity="0.900000036" transform="translate(15.500000, 548.000000) scale(-1, 1) translate(-15.500000, -548.000000) "></line>
+              <line x1="0.625" y1="652" x2="0.5" y2="568" id="Path-Copy-6" stroke="#666666" opacity="0.4" transform="translate(0.500000, 610.000000) scale(-1, 1) translate(-0.500000, -610.000000) "></line>
+              <line x1="30.625" y1="652" x2="30.75" y2="388.432787" id="Path" stroke="url(#linearGradient-5)" opacity="0.217099144" transform="translate(30.500000, 520.000000) scale(-1, 1) translate(-30.500000, -520.000000) "></line>
+              <line x1="80.75" y1="652" x2="80.5" y2="-3.78756922e-13" id="Path" stroke="url(#linearGradient-6)" opacity="0.725678943" transform="translate(80.500000, 326.000000) scale(-1, -1) translate(-80.500000, -326.000000) "></line>
+              <line x1="80.75" y1="652" x2="80.5" y2="216" id="Path-Copy-3" stroke="#0AB0BF" transform="translate(80.500000, 434.000000) scale(-1, 1) translate(-80.500000, -434.000000) "></line>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
