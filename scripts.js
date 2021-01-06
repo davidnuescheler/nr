@@ -192,14 +192,53 @@ function decorateColumns() {
     })
   }
   
+function playYouTubeVideo(vid, $element) {
+  console.log(vid, $element.id);
+  const ytPlayerScript='https://www.youtube.com/iframe_api';
+  if (!document.querySelector(`script[src="${ytPlayerScript}"]`)) {
+    const tag = document.createElement('script');
+    tag.src = ytPlayerScript;
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+  }
+
+  if (typeof YT !== 'undefined' && YT.Player) {
+    const player = new YT.Player($element.id, {
+      height: $element.clientHeight,
+      width: $element.clientWidth,
+      videoId: vid,
+      events: {
+          'onReady': (event) => {
+            event.target.playVideo();
+          },
+        }
+    });
+  } else {
+    console.log('set timeout');
+    setTimeout(() => {
+      console.log('timeout');
+      playYouTubeVideo(vid, $element);
+    }, 100)
+  }
+}
 
 function decorateVideos() {
-    document.querySelectorAll('main .video').forEach(($video) => {
+    document.querySelectorAll('main .video').forEach(($video, i) => {
         const $a=$video.querySelector('a');
         const $play=createTag('div', { class: 'play'});
         $play.innerHTML='<div class="triangle"></div>';
         $video.append($play);
-        $play.addEventListener('click',() => { window.location.href = $a.href} )
+        $play.addEventListener('click',() => { 
+          if ($a.href.indexOf('youtu')>0) {
+            const yturl=new URL($a.href);
+            let vid=yturl.searchParams.get('v');
+            if (!vid) {
+              vid=yturl.pathname.substr(1);
+            }
+            $video.id=`player-${i}`;
+            playYouTubeVideo(vid, $video);
+          }
+        })
     })
 }
 
