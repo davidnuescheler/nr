@@ -1,16 +1,16 @@
-COMPANY
+### COMPANY
 - Careers and Culture
 - Partner Program
 - Investor Relations
 - NewRelic.org
 - Suppliers Portal
 
-CONNECT
+### CONNECT
 - Contact Us
 - Request Demo
 - Events
 
-INTERNATIONAL
+### INTERNATIONAL
 - 日本語
 - Français
 - Deutsch

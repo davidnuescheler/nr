@@ -134,7 +134,73 @@ function decorateCustomerSpotlight() {
 
     $block.append($nav);
     })
+}
 
+function decorateForms() {
+    document.querySelectorAll('main div.form').forEach(($form) => {
+        const $rows=Array.from($form.children);
+        $rows.forEach(($row) => {
+            const $cells=$row.children;
+            const name=$cells[0].textContent.trim();
+            const options=$cells[1].textContent.trim();
+            const type=$cells[2].textContent.toLowerCase().trim();
+
+            console.log(type);
+            if (type=='text') {
+                $row.innerHTML=`<label for="${name}">${name}</label><input name="${name}" type="${type}" placeholder="${options}"/>`;
+            }
+            if (type=='submit') {
+                $row.innerHTML=`<button>${name}</button>`;
+            }
+        })
+    });
+}
+
+function decorateColumns() {
+    document.querySelectorAll('main > .section-wrapper').forEach(($section) => {
+      if ($section.querySelector('div.video') || $section.querySelector('div.embed') || $section.querySelector(':scope > div > p > picture')) {
+        const $columns=createTag('div', {class: 'columns'});
+        const $children=Array.from($section.children[0].children);
+        let $currentRow=createTag('div');
+        let $blockCol=createTag('div');
+        let $textCol=createTag('div');
+        $currentRow.append($textCol);
+        $currentRow.append($blockCol);
+        $children.forEach(($child) => {
+  
+            console.log ('child:'+$child.outerHTML);
+            if ($child.tagName=='DIV' && ($child.classList.contains('embed') || $child.classList.contains('block')) || 
+              ($child.tagName=='P' && $child.querySelector(':scope>picture'))) {
+                  console.log ('block child:'+$child.outerHTML);
+            $blockCol.append($child);
+            $columns.append($currentRow);
+            $currentRow=createTag('div');
+            $blockCol=createTag('div');
+            $textCol=createTag('div');
+            $currentRow.append($textCol);
+            $currentRow.append($blockCol);
+          } else {
+            $textCol.append($child);
+          }
+        })
+        
+        $columns.append($currentRow);
+
+        $section.firstChild.append($columns);
+        $section.classList.add('columns-container');
+      }
+    })
+  }
+  
+
+function decorateVideos() {
+    document.querySelectorAll('main .video').forEach(($video) => {
+        const $a=$video.querySelector('a');
+        const $play=createTag('div', { class: 'play'});
+        $play.innerHTML='<div class="triangle"></div>';
+        $video.append($play);
+        $play.addEventListener('click',() => { window.location.href = $a.href} )
+    })
 }
 
 function decoratePage() {
@@ -143,7 +209,11 @@ function decoratePage() {
     decorateTables();
     wrapSections('main>div');
     decorateBlocks();
+    decorateColumns();
     decorateCustomerSpotlight();
+    decorateForms();
+    decorateVideos();
+    wrapSections('footer>div');
 }
 
 decoratePage();
