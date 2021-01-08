@@ -3,7 +3,8 @@
     font-weight: 400;
     font-style: normal;
     font-stretch: normal;
-    src: url("/assets/OpenSans-Regular.woff2") format("woff2") 
+    src: url("/assets/OpenSans-Regular.woff2") format("woff2");
+    font-display: swap;
 }
     
 @font-face {
@@ -11,7 +12,8 @@
     font-weight: 600;
     font-style: normal;
     font-stretch: normal;
-    src: url("/assets/OpenSans-SemiBold.woff2") format("woff2") 
+    src: url("/assets/OpenSans-SemiBold.woff2") format("woff2");
+    font-display: swap;
 }
 
 /* Below the fold */
