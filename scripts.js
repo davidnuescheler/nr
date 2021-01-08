@@ -95,7 +95,6 @@ function decoratePictures() {
 
 function decorateBlocks() {
     document.querySelectorAll('div.block').forEach(($block) => {
-        console.log ($block);
         const $section=$block.closest('.section-wrapper');
         if ($section) {
             const classes=Array.from($block.classList.values());
@@ -129,7 +128,6 @@ function decorateCustomerSpotlight() {
             } else {
                 $navButton.classList.add('selected');
             }
-            console.log($row);
         })
 
     $block.append($nav);
@@ -145,7 +143,6 @@ function decorateForms() {
             const options=$cells[1].textContent.trim();
             const type=$cells[2].textContent.toLowerCase().trim();
 
-            console.log(type);
             if (type=='text') {
                 $row.innerHTML=`<label for="${name}">${name}</label><input name="${name}" type="${type}" placeholder="${options}"/>`;
             }
@@ -168,10 +165,8 @@ function decorateColumns() {
         $currentRow.append($blockCol);
         $children.forEach(($child) => {
   
-            console.log ('child:'+$child.outerHTML);
             if ($child.tagName=='DIV' && ($child.classList.contains('embed') || $child.classList.contains('block')) || 
               ($child.tagName=='P' && $child.querySelector(':scope>picture'))) {
-                  console.log ('block child:'+$child.outerHTML);
             $blockCol.append($child);
             $columns.append($currentRow);
             $currentRow=createTag('div');
@@ -193,7 +188,6 @@ function decorateColumns() {
   }
   
 function playYouTubeVideo(vid, $element) {
-  console.log(vid, $element.id);
   const ytPlayerScript='https://www.youtube.com/iframe_api';
   if (!document.querySelector(`script[src="${ytPlayerScript}"]`)) {
     const tag = document.createElement('script');
@@ -214,9 +208,7 @@ function playYouTubeVideo(vid, $element) {
         }
     });
   } else {
-    console.log('set timeout');
     setTimeout(() => {
-      console.log('timeout');
       playYouTubeVideo(vid, $element);
     }, 100)
   }
@@ -242,6 +234,22 @@ function decorateVideos() {
     })
 }
 
+/**
+ * Loads a CSS file.
+ * @param {string} href The path to the CSS file
+ */
+function loadCSS(href) {
+  const link = document.createElement('link');
+  link.setAttribute('rel', 'stylesheet');
+  link.setAttribute('href', href);
+  link.onload = () => {
+  }
+  link.onerror = () => {
+  }
+  document.head.appendChild(link);
+};
+
+
 function decoratePage() {
     decoratePictures();
     decorateHeader();
@@ -253,6 +261,7 @@ function decoratePage() {
     decorateForms();
     decorateVideos();
     wrapSections('footer>div');
+    loadCSS('/lazy-styles.css');
 }
 
 decoratePage();
