@@ -103,6 +103,40 @@ function decorateBlocks() {
     });
 }
 
+function readBlockConfig($block) {
+  const config={};
+  $block.querySelectorAll(':scope>div').forEach(($row) => {
+    if ($row.children && $row.children[1]) {
+      const name=toClassName($row.children[0].textContent);
+      const $a=$row.children[1].querySelector('a');
+      let value='';
+      if ($a) value=$a.href;
+      else value=$row.children[1].textContent;
+      config[name]=value;  
+    }
+  });
+  return config;
+}
+
+
+function decorateSheetForm() {
+  const $block=document.querySelector('.sheet-form');
+  if ($block) {
+    const config=readBlockConfig($block);
+
+    window.formConfig = {
+      form_sheet: config['form-data-submission'],
+      form_redirect: config['form-redirect']?config['form-redirect']:'thank-you',
+      form_to_use: config['form-definition']
+    }
+    
+    let tag = document.createElement("script");
+    tag.src = "/scripts/create-form.js";
+    document.getElementsByTagName("body")[0].appendChild(tag);
+  
+  }
+}
+
 function decorateCustomerSpotlight() {
     document.querySelectorAll('div.customer-spotlights').forEach(($block) => {
         const $rows=Array.from($block.children);
@@ -260,6 +294,7 @@ function decoratePage() {
     decorateCustomerSpotlight();
     decorateForms();
     decorateVideos();
+    decorateSheetForm();
     wrapSections('footer>div');
     loadCSS('/lazy-styles.css');
 }
