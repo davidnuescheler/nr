@@ -7,7 +7,6 @@
     override: true,
     condition: (sidekick) => sidekick.isEditor() || (sidekick.isHelix() && sidekick.config.host),
     button: {
-      text: '+',
       action: async () => {
         const { config, location } = sk;
         sk.showModal('Please wait...');
